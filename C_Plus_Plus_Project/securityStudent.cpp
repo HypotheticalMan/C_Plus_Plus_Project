@@ -1,4 +1,4 @@
-#include SECURITYSTUDENT_H
+#include "securityStudent.h"
 
 class securityStudent : public student
 {
