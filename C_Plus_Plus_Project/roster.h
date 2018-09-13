@@ -19,7 +19,8 @@ public:
 	void printByDegreeProgram(Degree degree);
 
 private:
-	int *classRosterArray[];
+	int *classRosterArray[NUMBER_OF_STUDENTS];
+	const string studentData[NUMBER_OF_STUDENTS];
 };
 
 #endif
