@@ -1,19 +1,23 @@
-//#includes go here
+#include "student.h"
 #include "networkStudent.h"
+#include "degree.h"
 using namespace std;
 
-class networkStudent : public Student {
+class NetworkStudent : public Student {
 private:
-    /* data */
+    
 public:
-    networkStudent(/* args */);
-    ~networkStudent();
+    NetworkStudent(string studentID, string firstName, string lastName, string emailAddress, int age, int averageDaysInCourse);
+    ~NetworkStudent();
+
 };
 
-networkStudent::networkStudent(/* args */) {
-//Constructor
+NetworkStudent::NetworkStudent(string studentID, string firstName, string lastName, string emailAddress, int age, int averageDaysInCourse) {
+	Student::setDegree(Degree::NETWORK);
 }
 
-networkStudent::~networkStudent() {
-//Destructor
+NetworkStudent::~NetworkStudent() {}
+
+NetworkStudent::getDegreeProgram() {
+	return Student::getDegree();
 }

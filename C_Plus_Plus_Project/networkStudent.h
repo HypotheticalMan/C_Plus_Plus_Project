@@ -3,12 +3,12 @@
 
 #include "student.h"
 
-class networkStudent : public student {
+class NetworkStudent : public Student {
 private:
     /* data */
 public:
-    networkStudent(/* args */);
-    ~networkStudent();
+    NetworkStudent(/* args */);
+    ~NetworkStudent();
 };
 
 #endif

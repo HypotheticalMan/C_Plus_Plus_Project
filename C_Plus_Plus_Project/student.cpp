@@ -1,22 +1,49 @@
 #include "student.h"
+#include "degree.h"
 #include <string>
+
 using namespace std;
 
-class student {
+class Student {
 private:
-    string firstName;
-    string lastName;
-    string emailAddress;
-    int age;
+	Degree degree;
+	string studentID;
+	string firstName;
+	string lastName;
+	string emailAddress;
+	int age;
+	int averageDaysInCourse[];
 
 public:
-    student(/* args */);
-    ~student();
-    string studentID;
+    Student(Degree degree, string studentID, string firstName, string lastName, string emailAddress, int age, int averageDaysInCourse);
+    ~Student();
+	void setDegree(Degree degree);
+	Degree getDegree();
+	virtual Degree getDegreeProgram();
+	virtual void Print();
 };
 
-student::student(/* args */) {
+Student::Student(Degree degree, string studentID, string firstName, string lastName, string emailAddress, int age, int averageDaysInCourse) {
 }
 
-student::~student() {
+Student::~Student() {
+}
+
+//Do for all other variables.
+void Student::setDegree(Degree degree)
+{
+}
+
+Degree Student::getDegree()
+{
+	return this->degree;
+}
+
+Degree Student::getDegreeProgram()
+{
+}
+
+//just "cout" the data.
+void Student::Print()
+{
 }
