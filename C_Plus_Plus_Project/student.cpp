@@ -16,22 +16,22 @@ private:
 
 public:
 	//Constructor & Destructor
-    Student(Degree degree, string studentID, string firstName, string lastName, string emailAddress, int age, int averageDaysInCourse);
-    ~Student();
+	Student(Degree degree, string studentID, string firstName, string lastName, string emailAddress, int age, int averageDaysInCourse);
+	~Student();
 	//Setters & Getters
-	virtual Degree getDegreeProgram() const;
+	virtual Degree getDegreeProgram();
 	void setDegree(Degree degree);
-	Degree getDegree() const;
+	Degree getDegree();
 	void setStudentID(string studentID);
-	string getStudentID() const;
+	string getStudentID();
 	void setFirstName(string firstName);
-	string getFirstName() const;
+	string getFirstName();
 	void setEmailAddress(string emailAddress);
-	string getEmailAddress() const;
+	string getEmailAddress();
 	void setAge(int age);
-	int getAge() const;
+	int getAge();
 	void setAverageDaysInCourse(int averageDaysInCourse[]);
-	int getAverageDaysInCourse() const;
+	int getAverageDaysInCourse();
 	//Member Functions
 	virtual void Print();
 };
@@ -49,57 +49,57 @@ Student::Student(Degree degree, string studentID, string firstName, string lastN
 Student::~Student() {
 };
 
-Degree Student::getDegreeProgram() const {
+Degree Student::getDegreeProgram() {
 }
 
-void Student::setDegree(Degree degree){
+void Student::setDegree(Degree degree) {
 	this->degree = degree;
 }
 
-Degree Student::getDegree() const {
+Degree Student::getDegree() {
 	return this->degree;
 }
 
-void Student::setStudentID(string studentID){
+void Student::setStudentID(string studentID) {
 	this->studentID = studentID;
 }
 
-string Student::getStudentID() const {
+string Student::getStudentID() {
 	return this->studentID;
 }
 
-void Student::setFirstName(string firstName){
+void Student::setFirstName(string firstName) {
 	this->firstName = firstName;
 }
 
-string Student::getFirstName() const {
+string Student::getFirstName() {
 	return this->firstName;
 }
 
-void Student::setEmailAddress(string emailAddress){
+void Student::setEmailAddress(string emailAddress) {
 	this->emailAddress = emailAddress;
 }
 
-string Student::getEmailAddress() const {
-	return this->emailAddress;
+string Student::getEmailAddress() {
+	return emailAddress;
 }
 
-void Student::setAge(int age){
+void Student::setAge(int age) {
 	this->age = age;
 }
 
-int Student::getAge() const {
-	return this->age;
+int Student::getAge() {
+	return age;
 }
 
-void Student::setAverageDaysInCourse(int averageDaysInCourse[]){
+void Student::setAverageDaysInCourse(int averageDaysInCourse[]) {
 	this->averageDaysInCourse[] = averageDaysInCourse;
 }
 
-int Student::getAverageDaysInCourse() const {
+int Student::getAverageDaysInCourse() {
 	return this->averageDaysInCourse;
 }
 
 //just "cout" the data.
-void Student::Print(){
+void Student::Print() {
 }

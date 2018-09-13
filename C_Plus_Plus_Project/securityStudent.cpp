@@ -11,12 +11,12 @@ public:
 	Degree getDegreeProgram();
 };
 
-securityStudent::securityStudent(string studentID, string firstName, string lastName, string emailAddress, int age, int averageDaysInCourse){
+securityStudent::securityStudent(string studentID, string firstName, string lastName, string emailAddress, int age, int averageDaysInCourse) {
 	Student::setDegree(Degree::SECURITY);
 }
 
-securityStudent::~securityStudent(){}
+securityStudent::~securityStudent() {}
 
-Degree securityStudent::getDegreeProgram(){
+Degree securityStudent::getDegreeProgram() {
 	return Student::getDegree();
 }

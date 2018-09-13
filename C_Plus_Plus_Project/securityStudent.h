@@ -6,10 +6,10 @@
 class securityStudent : public Student
 {
 private:
-    
+
 public:
-    securityStudent(string studentID, string firstName, string lastName, string emailAddress, int age, int averageDaysInCourse);
-    ~securityStudent();
+	securityStudent(string studentID, string firstName, string lastName, string emailAddress, int age, int averageDaysInCourse);
+	~securityStudent();
 	Degree getDegreeProgram();
 };
 #endif

@@ -6,10 +6,10 @@
 class SoftwareStudent : public Student
 {
 private:
-    
+
 public:
-    SoftwareStudent(string studentID, string firstName, string lastName, string emailAddress, int age, int averageDaysInCourse);
-    ~SoftwareStudent();
+	SoftwareStudent(string studentID, string firstName, string lastName, string emailAddress, int age, int averageDaysInCourse);
+	~SoftwareStudent();
 	Degree getDegreeProgram();
 };
 #endif
