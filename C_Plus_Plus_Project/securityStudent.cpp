@@ -1,18 +1,22 @@
 #include "securityStudent.h"
+#include "student.h"
+#include "degree.h"
 
-class securityStudent : public student
-{
+class securityStudent : public Student {
 private:
-    /* data */
+
 public:
-    securityStudent(/* args */);
-    ~securityStudent();
+	securityStudent(string studentID, string firstName, string lastName, string emailAddress, int age, int averageDaysInCourse);
+	~securityStudent();
+	Degree getDegreeProgram();
 };
 
-securityStudent::securityStudent(/* args */)
-{
+securityStudent::securityStudent(string studentID, string firstName, string lastName, string emailAddress, int age, int averageDaysInCourse){
+	Student::setDegree(Degree::SECURITY);
 }
 
-securityStudent::~securityStudent()
-{
+securityStudent::~securityStudent(){}
+
+Degree securityStudent::getDegreeProgram(){
+	return Student::getDegree();
 }

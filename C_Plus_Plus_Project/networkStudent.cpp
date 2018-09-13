@@ -1,7 +1,6 @@
-#include "student.h"
 #include "networkStudent.h"
+#include "student.h"
 #include "degree.h"
-using namespace std;
 
 class NetworkStudent : public Student {
 private:
@@ -9,7 +8,7 @@ private:
 public:
     NetworkStudent(string studentID, string firstName, string lastName, string emailAddress, int age, int averageDaysInCourse);
     ~NetworkStudent();
-
+	Degree getDegreeProgram();
 };
 
 NetworkStudent::NetworkStudent(string studentID, string firstName, string lastName, string emailAddress, int age, int averageDaysInCourse) {
@@ -18,6 +17,6 @@ NetworkStudent::NetworkStudent(string studentID, string firstName, string lastNa
 
 NetworkStudent::~NetworkStudent() {}
 
-NetworkStudent::getDegreeProgram() {
+Degree NetworkStudent::getDegreeProgram() {
 	return Student::getDegree();
 }

@@ -1,18 +1,22 @@
 #include "softwareStudent.h"
+#include "student.h"
+#include "degree.h"
 
-class softwareStudent : public student
-{
+class SoftwareStudent : public Student {
 private:
-    /* data */
+	
 public:
-    softwareStudent(/* args */);
-    ~softwareStudent();
+	SoftwareStudent(string studentID, string firstName, string lastName, string emailAddress, int age, int averageDaysInCourse);
+	~SoftwareStudent();
+	Degree getDegreeProgram();
 };
 
-softwareStudent::softwareStudent(/* args */)
-{
+SoftwareStudent::SoftwareStudent(string studentID, string firstName, string lastName, string emailAddress, int age, int averageDaysInCourse){
+	Student::setDegree(Degree::SOFTWARE);
 }
 
-softwareStudent::~softwareStudent()
-{
+SoftwareStudent::~SoftwareStudent() {}
+
+Degree SoftwareStudent::getDegreeProgram(){
+	return Student::getDegree();
 }

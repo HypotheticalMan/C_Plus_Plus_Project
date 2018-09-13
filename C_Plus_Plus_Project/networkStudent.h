@@ -1,14 +1,15 @@
+#include "student.h"
+#include "degree.h"
 #ifndef NETWORKSTUDENT_H
 #define NETWORKSTUDENT_H
 
-#include "student.h"
-
 class NetworkStudent : public Student {
 private:
-    /* data */
+
 public:
-    NetworkStudent(/* args */);
-    ~NetworkStudent();
+	NetworkStudent(string studentID, string firstName, string lastName, string emailAddress, int age, int averageDaysInCourse);
+	~NetworkStudent();
+	Degree getDegreeProgram();
 };
 
 #endif
