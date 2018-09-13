@@ -3,13 +3,13 @@
 #include "student.h"
 #include "degree.h"
 
-class securityStudent : public Student
+class SecurityStudent : public Student
 {
 private:
 
 public:
-	securityStudent(string studentID, string firstName, string lastName, string emailAddress, int age, int averageDaysInCourse);
-	~securityStudent();
+	SecurityStudent(string studentID, string firstName, string lastName, string emailAddress, int age, int averageDaysInCourse);
+	~SecurityStudent();
 	Degree getDegreeProgram();
 };
 #endif

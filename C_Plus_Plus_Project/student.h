@@ -12,23 +12,29 @@ private:
 	string lastName;
 	string emailAddress;
 	int age;
-	int averageDaysInCourse[3];
+	int* averageDaysInCourse;
+
 public:
-	Student(Degree degree, string studentID, string firstName, string lastName, string emailAddress, int age, int averageDaysInCourse);
+	//Constructor & Destructor
+	Student();
+	Student(Degree degree, string studentID, string firstName, string lastName, string emailAddress, int age, int* averageDaysInCourse);
 	~Student();
-	virtual Degree getDegreeProgram() const;
+
+	//Setters & Getters
+	virtual Degree getDegreeProgram();
 	void setDegree(Degree degree);
-	Degree getDegree() const;
 	void setStudentID(string studentID);
-	string getStudentID() const;
+	string getStudentID();
 	void setFirstName(string firstName);
-	string getFirstName() const;
+	string getFirstName();
 	void setEmailAddress(string emailAddress);
-	string getEmailAddress() const;
+	string getEmailAddress();
 	void setAge(int age);
-	int getAge() const;
-	void setAverageDaysInCourse(int averageDaysInCourse[]);
-	int getAverageDaysInCourse() const;
+	int getAge();
+	void setAverageDaysInCourse(int* averageDaysInCourse);
+	int* getAverageDaysInCourse();
+
+	//Member Functions
 	virtual void Print();
 };
 #endif
