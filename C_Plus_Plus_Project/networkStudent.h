@@ -7,7 +7,7 @@ class NetworkStudent : public Student {
 private:
 
 public:
-	NetworkStudent(string studentID, string firstName, string lastName, string emailAddress, int age, int averageDaysInCourse);
+	NetworkStudent(string studentID, string firstName, string lastName, string emailAddress, int age, int* averageDaysInCourse);
 	~NetworkStudent();
 	Degree getDegreeProgram();
 };

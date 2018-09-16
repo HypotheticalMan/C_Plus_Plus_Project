@@ -46,6 +46,14 @@ string Student::getFirstName() {
 	return this->firstName;
 }
 
+void Student::setLastName(string lastName) {
+	this->lastName = lastName;
+}
+
+string Student::getLastName() {
+	return lastName;
+}
+
 void Student::setEmailAddress(string emailAddress) {
 	this->emailAddress = emailAddress;
 }
@@ -62,18 +70,32 @@ int Student::getAge() {
 	return age;
 }
 
-void Student::setAverageDaysInCourse(int* averageDaysInCourse) {
-	this->averageDaysInCourse = averageDaysInCourse;
+void Student::setAverageDaysInCourse(int newDays[]) {
+	averageDaysInCourse[0] = newDays[0];
+	averageDaysInCourse[1] = newDays[1];
+	averageDaysInCourse[2] = newDays[2];
+
 }
 
 int* Student::getAverageDaysInCourse() {
-	return this->averageDaysInCourse;
+	return averageDaysInCourse;
 }
 
 //just "cout" the data.
 void Student::Print() {
+	string value = "";
+	if (degree == Degree::SECURITY) {
+		value = "SECURITY";
+	}
+	if (degree == Degree::NETWORK) {
+		value = "NETWORK";
+	}
+	if (degree == Degree::SOFTWARE) {
+		value = "SOFTWARE";
+	}
+
 	cout << "\tFirst Name: " << firstName
 		<< "\tLast Name: " << lastName
 		<< "\tAge: " << age
-		<< "\tdaysInCourse: {" << averageDaysInCourse[0] << ", " << averageDaysInCourse[1] << ", " << averageDaysInCourse[2] << "} Degree Program: " << degree << endl;
+		<< "\tdaysInCourse: {" << averageDaysInCourse[0] << ", " << averageDaysInCourse[1] << ", " << averageDaysInCourse[2] << "} Degree Program: " << value << endl;
 }

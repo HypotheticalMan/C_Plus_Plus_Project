@@ -8,7 +8,7 @@ class SecurityStudent : public Student
 private:
 
 public:
-	SecurityStudent(string studentID, string firstName, string lastName, string emailAddress, int age, int averageDaysInCourse);
+	SecurityStudent(string studentID, string firstName, string lastName, string emailAddress, int age, int* averageDaysInCourse);
 	~SecurityStudent();
 	Degree getDegreeProgram();
 };

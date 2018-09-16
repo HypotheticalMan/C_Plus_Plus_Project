@@ -12,7 +12,7 @@ private:
 	string lastName;
 	string emailAddress;
 	int age;
-	int* averageDaysInCourse;
+	int averageDaysInCourse[3];
 
 public:
 	//Constructor & Destructor
@@ -27,11 +27,13 @@ public:
 	string getStudentID();
 	void setFirstName(string firstName);
 	string getFirstName();
+	void setLastName(string lastName);
+	string getLastName();
 	void setEmailAddress(string emailAddress);
 	string getEmailAddress();
 	void setAge(int age);
 	int getAge();
-	void setAverageDaysInCourse(int* averageDaysInCourse);
+	void setAverageDaysInCourse(int averageDaysInCourse[]);
 	int* getAverageDaysInCourse();
 
 	//Member Functions
