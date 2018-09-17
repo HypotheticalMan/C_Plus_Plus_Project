@@ -14,7 +14,7 @@ Roster::Roster() {
 }
 
 Roster::~Roster() {
-	delete classRosterArray;
+	classRosterArray = NULL;
 }
 
 //array is called Student *classRosterArray[]
@@ -53,11 +53,12 @@ void Roster::remove(string studentID){
 		}
 		if (classRosterArray[i].getStudentID() == studentID) {
 			isFound = true;
+			cout << "Student with Student ID " << studentID << " was removed from Class Roster!" << endl;
 		}
 	}
 	
 	if (!isFound) {
-		cout << "Student with student ID " << studentID << " was not found!" << endl;
+		cout << "Student with Student ID " << studentID << " was not found!" << endl;
 	}
 
 	classRosterArray = tempArray;
@@ -65,6 +66,7 @@ void Roster::remove(string studentID){
 }
 
 void Roster::printAll(){
+	cout << "All students in Class Roster:" << endl;
 	for (int i = 0; i < NUMBER_OF_STUDENTS; i++)
 	{
 		cout << i + 1;
@@ -90,7 +92,7 @@ void Roster::printAverageDaysInCourse(string studentID){
 		total += daysArray[i];
 	}
 
-	cout << total / 3 << endl;
+	cout << studentID << ": " << total / 3 << endl;
 
 	return;
 }
@@ -107,23 +109,42 @@ void Roster::printInvalidEmails(){
 		string emailToTest = classRosterArray[i].getEmailAddress();
 
 		if (!(emailToTest.find(at) != string::npos && emailToTest.find(dot) != string::npos && emailToTest.find(space) == string::npos)) {
-			invalidEmails.append(emailToTest + " ");
+			invalidEmails.append(emailToTest + "; ");
 		}
 
 	}
-
-	cout << invalidEmails << endl;
+	
+	cout << "Invalid emails:" << endl;
+	cout << invalidEmails << endl << endl;
 
 	return;
 }
 
 void Roster::printByDegreeProgram(Degree degree){
+	
+	string value = "";
+	if (degree == Degree::SECURITY) {
+		value = "SECURITY";
+	}
+	if (degree == Degree::NETWORK) {
+		value = "NETWORK";
+	}
+	if (degree == Degree::SOFTWARE) {
+		value = "SOFTWARE";
+	}
+
+	cout << "Students by Degree Program " << value << ":" << endl;
+
+	int listNumber = 1;
 	for (int i = 0; i < NUMBER_OF_STUDENTS; i++)
 	{
 		if (classRosterArray[i].getDegreeProgram() == degree) {
+			cout << listNumber++ << "\t";
 			classRosterArray[i].Print();
 		}
 	}
+
+	cout << endl;
 
 	return;
 }
@@ -136,7 +157,7 @@ Student* Roster::getClassRosterArray()
 //input data = const string studentData
 int main() {
 
-	string courseTitle = "Course Title: C___ - Scripting & Programming Applications";
+	string courseTitle = "Course Title: C867 - Scripting & Programming Applications";
 	string programmingLanguage = "Programming Language Used: C++";
 	string myStudentID = "Student ID: 000805788";
 	string myName = "Student Name: Joshua Fairbourn";
@@ -203,15 +224,20 @@ int main() {
 
 	classRoster.printAll();
 
+	cout << endl;
+
 	classRoster.printInvalidEmails();
 	
 	Student *students = classRoster.getClassRosterArray();
 
+	cout << "Average Days in Course by Student ID:" << endl;
 	for (int i = 0; i < Roster::NUMBER_OF_STUDENTS; i++)
 	{
 		Student student = students[i];
 		classRoster.printAverageDaysInCourse(student.getStudentID());
 	}
+
+	cout << endl;
 
 	classRoster.printByDegreeProgram(SOFTWARE);
 
@@ -220,7 +246,7 @@ int main() {
 	classRoster.remove("A3");
 
 
-	delete &classRoster;
+	classRoster.~Roster();
 
 	return 0;
 

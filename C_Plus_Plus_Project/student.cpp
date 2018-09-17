@@ -5,8 +5,8 @@
 #include <iostream>
 using namespace std;
 
-Student::Student()
-{
+Student::Student(){
+
 }
 
 Student::Student(Degree degree, string studentID, string firstName, string lastName, string emailAddress, int age, int* averageDaysInCourse) {
@@ -20,6 +20,7 @@ Student::Student(Degree degree, string studentID, string firstName, string lastN
 };
 
 Student::~Student() {
+	*averageDaysInCourse = NULL;
 };
 
 Degree Student::getDegreeProgram() {
@@ -71,6 +72,7 @@ int Student::getAge() {
 }
 
 void Student::setAverageDaysInCourse(int newDays[]) {
+
 	averageDaysInCourse[0] = newDays[0];
 	averageDaysInCourse[1] = newDays[1];
 	averageDaysInCourse[2] = newDays[2];
@@ -94,8 +96,8 @@ void Student::Print() {
 		value = "SOFTWARE";
 	}
 
-	cout << "\tFirst Name: " << firstName
-		<< "\tLast Name: " << lastName
-		<< "\tAge: " << age
-		<< "\tdaysInCourse: {" << averageDaysInCourse[0] << ", " << averageDaysInCourse[1] << ", " << averageDaysInCourse[2] << "} Degree Program: " << value << endl;
+	cout << "\t" << "First Name: " << firstName
+		<< "\t" << "Last Name: " << lastName
+		<< "\t" << "Age: " << age
+		<< "\t" << "daysInCourse: {" << averageDaysInCourse[0] << ", " << averageDaysInCourse[1] << ", " << averageDaysInCourse[2] << "} Degree Program: " << value << endl;
 }
